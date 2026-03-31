@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', system-ui, sans-serif;
+    color: #3D3D3D;
+    background: #FAFAF7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif SC', serif;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-nx-gold font-medium tracking-widest text-sm uppercase;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-nx-green leading-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-nx-green text-white px-6 py-3 rounded-sm font-medium
+           hover:bg-nx-green-light transition-all duration-300 tracking-wide;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-nx-green text-nx-green px-6 py-3 rounded-sm font-medium
+           hover:bg-nx-green hover:text-white transition-all duration-300 tracking-wide;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(27, 67, 50, 0.85) 0%,
+    rgba(27, 67, 50, 0.6) 50%,
+    rgba(27, 67, 50, 0.4) 100%
+  );
+}
+
+/* Decorative line */
+.deco-line {
+  @apply w-12 h-0.5 bg-nx-gold;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B4332;
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
